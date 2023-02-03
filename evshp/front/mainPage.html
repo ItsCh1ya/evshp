@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page</title>
+    <link type="text/css" rel="stylesheet/less" href="./assets/style/style.less">
+</head>
+
+<body>
+
+    <div class="headSection">
+        <header class="mainHeader">
+
+            <div class="logo">
+                <h1>Заголовок</h1>
+            </div>
+            <div class="test">
+                <span>Войти</span>
+            </div>
+
+        </header>
+    </div>
+
+    <main>
+
+        <section class="cont newsDirectory">
+            <div class="leftNewsBlock">
+                <div class="titleBlock">
+                    <h2 id="editH2">Текст</h2>
+                    <p id="editP">Здесь будет волшебный текст!</p>
+                </div>
+            </div>
+
+            <div class="rightNewsBlock"></div>
+            </div>
+        </section>
+
+        <div class="purpleBack">
+            <section class="cont purpleNewsDirectory">
+                <div class="createBook">
+                    <!-- <a class="linkArchive" href="/library">Кнопка</a> -->
+
+                    <div class="window">
+                        <h3>Регистрация</h3>
+                        <label>
+                            <input id="studName" name="studName" type="text" placeholder="Имя" required>
+                        </label>
+                        <label>
+                            <input id="studLastName" name="studLastName" type="text" placeholder="Фамилия" required>
+                        </label>
+                        <label>
+                            <input id="studMail" name="studMail" type="text" placeholder="Почта" required>
+                        </label>
+                        <label>
+                            <input id="" name="" type="text" placeholder="Пароль" required>
+                        </label>
+                        <div class="buttons">
+                            <input type="reset" value="Отмена">
+                            <input onclick="document.location='page.html'" id="butt" class="btnOk" type="button" value="Готово">
+                        </div>
+                    </div>
+
+                    <div class="window windowEnter">
+                        <h3>Вход</h3>
+                        <label>
+                            <input id="studName" name="studName" type="text" placeholder="Почта" required>
+                        </label>
+                        <label>
+                            <input id="studMail" name="studMail" type="text" placeholder="Пароль" required>
+                        </label>
+                        <div class="buttons">
+                            <input type="reset" value="Отмена">
+                            <input onclick="document.location='page.html'" id="butt" class="btnOk" type="button" value="Войти">
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="cont">
+            <p class="copy">
+                <span class="copySpan">©</span>
+                <span>2023 ISIP group.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="assets/js/less.js"></script>
+</body>
+
+</html>
