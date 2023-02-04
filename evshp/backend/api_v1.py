@@ -1,7 +1,7 @@
 from datetime import datetime
 from flask import request, session, jsonify
 from evshp import db, app
-from evshp.backend.utils import type_validation
+from evshp.backend.utils import type_validation, strings_validation
 import bcrypt
 
 @app.route('/api/v1/register', methods=['POST'])
@@ -9,6 +9,10 @@ def api_register():
     try:
         if not type_validation(request.json, {"login":str, "password":str, "email":str}):
             return jsonify({"status":"error", "description":"Wrong type of values"}), 400
+        
+        elif not strings_validation([request.json['email'], request.json['password'], request.json['login']]):
+            return jsonify({"status":"error", "description":"Lenght of string is zero, or used dangerous symbols"})
+        
     except KeyError:
         return jsonify({"status":"error", "description":"Invalid body"}), 400
     
@@ -32,6 +36,10 @@ def api_login():
     try:
         if not type_validation(request.json, {"email":str, "password":str}):
             return jsonify({"status":"error", "description":"Wrong type of values"}), 400
+        
+        elif not strings_validation([request.json['email'], request.json['password']]):
+            return jsonify({"status":"error", "description":"Lenght of string is zero, or used dangerous symbols"})
+        
     except KeyError:
         return jsonify({"status":"error", "description":"Invalid body"}), 400
     
